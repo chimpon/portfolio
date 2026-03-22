@@ -1,0 +1,32 @@
+/* ============================================================
+   UTILITIES
+   Portfolio — Juan Cobo
+   
+   Clases de utilidad. Pocas y con propósito claro.
+   No es un framework de utilidades — solo lo necesario.
+   ============================================================ */
+
+/* Screen-reader only — accesibilidad */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Alineación de texto */
+.text-center { text-align: center; }
+
+/* Mostrar/ocultar por breakpoint */
+@media (max-width: 767px) {
+  .hide-mobile { display: none !important; }
+}
+
+@media (min-width: 768px) {
+  .hide-desktop { display: none !important; }
+}

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Study Title — Juan Cobo</title>
+  <meta name="description" content="Case study description here.">
+  
+  <!-- Adobe Fonts — mismo embed que index.html -->
+  <!-- TODO: Sustituir con tu embed real de Adobe Fonts -->
+  <link rel="stylesheet" href="https://use.typekit.net/XXXXXXX.css">
+
+  <!-- CSS — paths relativos desde /cases/ -->
+  <link rel="stylesheet" href="../assets/css/variables.css">
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/utilities.css">
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
+
+  <!-- Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "CLARITY_PROJECT_ID");
+  </script>
+</head>
+
+<body>
+
+  <!-- ============================================================
+       HEADER (mismo que index.html)
+       ============================================================ -->
+  <header class="header">
+    <div class="header__inner container">
+      <a href="../index.html" class="header__logo">Juan Cobo</a>
+
+      <button class="header__hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="header__nav" aria-label="Main navigation">
+        <a href="../index.html#works" class="header__nav-link">Works</a>
+        <a href="../index.html#about" class="header__nav-link">About me</a>
+        <a href="../index.html#contact" class="header__nav-link header__nav-link--cta">Contact</a>
+
+        <button class="theme-toggle" aria-label="Toggle dark/light mode">
+          <svg class="theme-toggle__icon--sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg class="theme-toggle__icon--moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ============================================================
+         PASSWORD GATE (opcional)
+         
+         Para activar la protección en un case confidencial:
+         1. Descomenta este bloque
+         2. Pon la contraseña en data-password
+         3. El JS lo gestiona automáticamente
+         ============================================================ -->
+    <!--
+    <div class="password-gate" data-password="tu-password-aqui">
+      <h2 class="password-gate__title">This case study is protected</h2>
+      <p class="password-gate__text">
+        This project contains confidential information.
+        Please enter the password to view the case study.
+      </p>
+      <div class="password-gate__form">
+        <input type="password" class="password-gate__input" placeholder="Enter password" autocomplete="off">
+        <button class="password-gate__submit">Unlock</button>
+      </div>
+      <p class="password-gate__error" aria-live="polite"></p>
+    </div>
+    -->
+
+    <!-- ============================================================
+         CASE CONTENT
+         
+         Si el password gate está activo, este div se oculta por JS
+         hasta que se introduzca la contraseña correcta.
+         ============================================================ -->
+    <div class="case-content">
+
+      <!-- CASE HERO -->
+      <section class="case-hero section container">
+        <h1 class="case-hero__title">Case Study Title Goes Here</h1>
+        <div class="case-hero__meta">
+          <span><strong>Role:</strong> UX Designer</span>
+          <span><strong>Company:</strong> Company Name</span>
+          <span><strong>Year:</strong> 2024</span>
+          <span><strong>Duration:</strong> 3 months</span>
+        </div>
+      </section>
+
+      <!-- CONTEXT -->
+      <section class="case-section section container reveal">
+        <h2 class="case-section__title">Context</h2>
+        <div class="case-section__content">
+          <p>
+            Describe the context of the project: the company, the product,
+            the team, and why this project was initiated.
+          </p>
+        </div>
+      </section>
+
+      <!-- PROBLEM -->
+      <section class="case-section section container reveal">
+        <h2 class="case-section__title">The Problem</h2>
+        <div class="case-section__content">
+          <p>
+            What was the core problem? What evidence existed?
+            What were the business and user impacts?
+          </p>
+        </div>
+        <figure class="case-image">
+          <img src="../assets/img/placeholder-case-detail.jpg" alt="Description of the image">
+          <figcaption>Caption describing the image</figcaption>
+        </figure>
+      </section>
+
+      <!-- PROCESS -->
+      <section class="case-section section container reveal">
+        <h2 class="case-section__title">Process</h2>
+        <div class="case-section__content">
+          <p>
+            Describe your design process: research, analysis,
+            ideation, prototyping, testing, iteration.
+          </p>
+        </div>
+      </section>
+
+      <!-- SOLUTION -->
+      <section class="case-section section container reveal">
+        <h2 class="case-section__title">Solution</h2>
+        <div class="case-section__content">
+          <p>
+            What was the final solution? Show the key screens,
+            interactions, and design decisions.
+          </p>
+        </div>
+      </section>
+
+      <!-- RESULTS -->
+      <section class="case-section section container reveal">
+        <h2 class="case-section__title">Results</h2>
+        <div class="case-section__content">
+          <p>
+            Quantitative and qualitative results.
+            Metrics, user feedback, business impact.
+          </p>
+        </div>
+      </section>
+
+      <!-- NAVIGATION BETWEEN CASES -->
+      <nav class="case-nav container" aria-label="Case study navigation">
+        <a href="../index.html" class="link-arrow" style="flex-direction: row-reverse;">
+          ← Back to all works
+        </a>
+        <a href="next-case.html" class="link-arrow">Next case study</a>
+      </nav>
+
+    </div><!-- /.case-content -->
+
+  </main>
+
+
+  <!-- Lightbox -->
+  <div class="lightbox" role="dialog" aria-label="Image preview" aria-hidden="true">
+    <button class="lightbox__close" aria-label="Close preview">&times;</button>
+    <img class="lightbox__img" src="" alt="">
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="footer section container">
+    <p class="footer__credit">Made by Juan Cobo with love</p>
+  </footer>
+
+
+  <script src="../assets/js/main.js"></script>
+
+</body>
+</html>

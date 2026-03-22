@@ -1,0 +1,198 @@
+/* ============================================================
+   DESIGN TOKENS
+   Portfolio — Juan Cobo
+   
+   Arquitectura:
+   - Dark mode es el tema por defecto (coincide con el diseño en Figma)
+   - Light mode se activa con [data-theme="light"] en <html>
+   - Todos los componentes usan exclusivamente estas variables
+   - NUNCA valores hardcoded en componentes
+   ============================================================ */
+
+:root {
+  /* ----------------------------------------------------------
+     TIPOGRAFÍA — Familias
+     
+     IMPORTANTE: Requiere Adobe Fonts (Typekit) para:
+     - Hegante (display/logo)
+     - Acumin Pro Wide (headings, nav, labels)
+     - Acumin Pro (body)
+     
+     Instrucciones de setup en el <head> de cada HTML.
+     Si Adobe Fonts no carga, los fallbacks son genéricos
+     pero mantendrán la legibilidad.
+     ---------------------------------------------------------- */
+  --font-display: 'Hegante', Georgia, serif;
+  --font-heading: 'acumin-pro-wide', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-body: 'acumin-pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mono: 'American Typewriter', 'Courier New', Courier, monospace;
+
+  /* ----------------------------------------------------------
+     TIPOGRAFÍA — Escala
+     Basada en los tamaños exactos del diseño en Figma.
+     Convertidos a rem (base 16px) para accesibilidad.
+     ---------------------------------------------------------- */
+  --text-xs: 0.875rem;     /* 14px — micro labels */
+  --text-sm: 1rem;         /* 16px — footer links, small labels */
+  --text-base: 1.3125rem;  /* 21px — body, descripciones, nav */
+  --text-md: 1.5rem;       /* 24px — card titles, section labels */
+  --text-lg: 2.25rem;      /* 36px — hero text */
+  --text-xl: 3rem;         /* 48px — hero mobile fallback */
+  --text-2xl: 4rem;        /* 64px — logo/display */
+
+  /* ----------------------------------------------------------
+     TIPOGRAFÍA — Line heights
+     Valores del diseño Figma.
+     ---------------------------------------------------------- */
+  --leading-tight: 1;         /* 1:1 — nav items, labels */
+  --leading-snug: 1.15;       /* card titles */
+  --leading-normal: 1.333;    /* body text (28/21) */
+  --leading-relaxed: 1.5;     /* logo */
+  --leading-loose: 2;         /* footer credit */
+
+  /* ----------------------------------------------------------
+     TIPOGRAFÍA — Font weights
+     Mapeados a los estilos de Figma.
+     ---------------------------------------------------------- */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+  --weight-black: 900;
+
+  /* ----------------------------------------------------------
+     ESPACIADO
+     Escala de 4px. Usada para padding, margin, gap.
+     ---------------------------------------------------------- */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+  --space-32: 8rem;     /* 128px */
+
+  /* ----------------------------------------------------------
+     LAYOUT
+     ---------------------------------------------------------- */
+  --container-max: 1200px;
+  --container-padding: var(--space-6);
+  --grid-gap: var(--space-8);
+  --section-gap: var(--space-24);
+
+  /* ----------------------------------------------------------
+     BREAKPOINTS (solo como referencia)
+     Usados en media queries, no como variables CSS.
+     
+     Mobile-first:
+     sm: 480px
+     md: 768px
+     lg: 1024px
+     xl: 1280px
+     ---------------------------------------------------------- */
+
+  /* ----------------------------------------------------------
+     BORDES Y RADIOS
+     ---------------------------------------------------------- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* ----------------------------------------------------------
+     TRANSICIONES
+     ---------------------------------------------------------- */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+  --transition-theme: 300ms ease; /* específica para cambio de tema */
+
+  /* ----------------------------------------------------------
+     Z-INDEX
+     ---------------------------------------------------------- */
+  --z-base: 0;
+  --z-above: 10;
+  --z-header: 100;
+  --z-overlay: 500;
+  --z-modal: 1000;
+
+  /* ----------------------------------------------------------
+     COLORES — MODO OSCURO (default)
+     
+     Paleta extraída del diseño Figma:
+     - Fondo: #333333
+     - Texto principal: #ffe3eb (rosa claro)
+     - Texto secundario: #d9d9d9
+     
+     Tokens semánticos derivados para cubrir todos los usos.
+     ---------------------------------------------------------- */
+  --color-bg-primary: #2b2b2b;
+  --color-bg-secondary: #333333;
+  --color-bg-surface: #3d3d3d;
+  --color-bg-elevated: #474747;
+
+  --color-text-primary: #ffe3eb;
+  --color-text-secondary: #d9d9d9;
+  --color-text-muted: #999999;
+  --color-text-inverse: #2b2b2b;
+
+  --color-accent: #ffe3eb;
+  --color-accent-hover: #ffd0dc;
+  --color-accent-subtle: rgba(255, 227, 235, 0.1);
+
+  --color-border: rgba(255, 227, 235, 0.12);
+  --color-border-strong: rgba(255, 227, 235, 0.25);
+
+  --color-link: #ffe3eb;
+  --color-link-hover: #ffffff;
+
+  /* Overlay para lightbox, modales */
+  --color-overlay: rgba(0, 0, 0, 0.8);
+
+  /* Estado de foco para accesibilidad */
+  --color-focus: #ffe3eb;
+  --focus-ring: 0 0 0 2px var(--color-bg-primary), 0 0 0 4px var(--color-focus);
+}
+
+/* ==============================================================
+   COLORES — MODO CLARO
+   
+   Criterio de diseño:
+   - El acento rosa se oscurece a #c4506e para mantener 
+     ratio de contraste WCAG AA sobre fondo claro.
+   - Fondos cálidos (off-white) para no ser agresivo.
+   - El logo mantiene el rosa original porque va sobre 
+     fondo oscuro en el header (si se decide mantenerlo).
+   ============================================================== */
+
+[data-theme="light"] {
+  --color-bg-primary: #f8f5f2;
+  --color-bg-secondary: #ffffff;
+  --color-bg-surface: #eee9e4;
+  --color-bg-elevated: #ffffff;
+
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #4a4a4a;
+  --color-text-muted: #777777;
+  --color-text-inverse: #f8f5f2;
+
+  --color-accent: #c4506e;
+  --color-accent-hover: #a83d5a;
+  --color-accent-subtle: rgba(196, 80, 110, 0.08);
+
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-border-strong: rgba(0, 0, 0, 0.18);
+
+  --color-link: #c4506e;
+  --color-link-hover: #8a2b45;
+
+  --color-overlay: rgba(0, 0, 0, 0.6);
+
+  --color-focus: #c4506e;
+  --focus-ring: 0 0 0 2px var(--color-bg-primary), 0 0 0 4px var(--color-focus);
+}

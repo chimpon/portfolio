@@ -1,0 +1,94 @@
+/* ============================================================
+   RESET
+   Portfolio — Juan Cobo
+   
+   Reset moderno y ligero. Solo lo estrictamente necesario.
+   Basado en Josh Comeau's Custom CSS Reset + ajustes propios.
+   ============================================================ */
+
+/* Box sizing global */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Eliminar márgenes por defecto */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevenir overflow horizontal */
+html {
+  overflow-x: hidden;
+}
+
+/* Configuración base del body */
+body {
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Imágenes y media: block por defecto, max-width */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Heredar tipografía en formularios */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* Evitar text overflow */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* Listas sin estilo por defecto en nav */
+nav ul,
+nav ol {
+  list-style: none;
+}
+
+/* Links sin subrayado por defecto — se controla en base.css */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Botones: reset completo */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Accesibilidad: respetar preferencias de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

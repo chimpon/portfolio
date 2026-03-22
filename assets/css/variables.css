@@ -162,37 +162,34 @@
 /* ==============================================================
    COLORES — MODO CLARO
    
-   Criterio de diseño:
-   - El acento rosa se oscurece a #c4506e para mantener 
-     ratio de contraste WCAG AA sobre fondo claro.
-   - Fondos cálidos (off-white) para no ser agresivo.
-   - El logo mantiene el rosa original porque va sobre 
-     fondo oscuro en el header (si se decide mantenerlo).
+   Inversión directa del modo oscuro.
+   Solo dos colores: #ffe3eb (fondo) y #333333 (todo lo demás).
    ============================================================== */
 
 [data-theme="light"] {
-  --color-bg-primary: #f8f5f2;
-  --color-bg-secondary: #ffffff;
-  --color-bg-surface: #eee9e4;
-  --color-bg-elevated: #ffffff;
+  --color-bg-primary: #ffe3eb;
+  --color-bg-secondary: #ffe3eb;
+  --color-bg-surface: #ffe3eb;
+  --color-bg-elevated: #ffe3eb;
 
-  --color-text-primary: #1a1a1a;
-  --color-text-secondary: #4a4a4a;
-  --color-text-muted: #777777;
-  --color-text-inverse: #f8f5f2;
+  --color-text-primary: #333333;
+  --color-text-secondary: #333333;
+  --color-text-muted: #333333;
+  --color-text-inverse: #ffe3eb;
 
-  --color-accent: #c4506e;
-  --color-accent-hover: #a83d5a;
-  --color-accent-subtle: rgba(196, 80, 110, 0.08);
+  --color-accent: #333333;
+  --color-accent-hover: #333333;
+  --color-accent-subtle: rgba(51, 51, 51, 0.08);
 
-  --color-border: rgba(0, 0, 0, 0.08);
-  --color-border-strong: rgba(0, 0, 0, 0.18);
+  --color-border: rgba(51, 51, 51, 0.15);
+  --color-border-strong: rgba(51, 51, 51, 0.3);
 
-  --color-link: #c4506e;
-  --color-link-hover: #8a2b45;
+  --color-link: #333333;
+  --color-link-hover: #333333;
 
   --color-overlay: rgba(0, 0, 0, 0.6);
 
-  --color-focus: #c4506e;
+  --color-focus: #333333;
   --focus-ring: 0 0 0 2px var(--color-bg-primary), 0 0 0 4px var(--color-focus);
 }
+
